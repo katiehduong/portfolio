@@ -30,7 +30,7 @@ h1,h2,h3{font-family:"P22 Mackinac",Newsreader,Georgia,serif;font-weight:400;lin
 .card{text-decoration:none}
 .thumb{aspect-ratio:1.6;border-radius:6px;overflow:hidden;display:flex;justify-content:center;transition:transform .25s}
 .thumb video{height:100%;width:100%;object-fit:cover}
-.card:hover .thumb{transform:translateY(-4px)}
+
 .coral{background:var(--coral)}.aqua{background:var(--aqua)}
 .tags{margin-top:.9rem}
 .prose,.case{max-width:none;padding:clamp(2rem,6vw,4rem) var(--pad)}
@@ -78,5 +78,24 @@ footer{margin-top:4rem;border-top:1px solid var(--line);color:var(--muted);font-
 header .bar{padding-top:2.25rem}
 .logo img{width:20px;height:20px;display:block}
 .card h2{font-size:clamp(1.25rem,1.55vw,1.65rem);font-weight:500;margin-top:.6rem;line-height:1.25}
-.card:hover h2{text-decoration:underline;text-underline-offset:6px}
+
 @media(max-width:820px){.hero h1 br{display:none}}
+
+/* Hover: logo, Work, Resume, LinkedIn shrink 5% and fade to 50% */
+.hv{transition:transform .2s ease,opacity .2s ease}
+.logo.hv{transform-origin:left center}
+.more a.hv{display:inline-block}
+.hv:focus-visible{opacity:.5;transform:scale(.95)}
+@media(hover:hover){.hv:hover{opacity:.5;transform:scale(.95)}}
+/* Hover: only the card image lifts 8px; tags and title stay put */
+.thumb{transition:transform .25s ease}
+.card:focus-visible .thumb{transform:translateY(-8px)}
+@media(hover:hover){.card:hover .thumb{transform:translateY(-8px)}}
+/* Floating pills */
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}30%{transform:translateY(-5px) rotate(var(--r,2deg))}70%{transform:translateY(2px) rotate(calc(var(--r,2deg) * -1))}}
+.hero .pills .pill{animation:float 3.8s ease-in-out infinite;animation-delay:.6s;animation-fill-mode:backwards}
+.hero .pills .pill:nth-child(2){--r:-2.5deg;animation-duration:4.3s;animation-delay:.9s}
+.hero .pills .pill:nth-child(3){--r:2deg;animation-duration:4s;animation-delay:1.2s}
+@media(prefers-reduced-motion:reduce){.hv,.thumb{transition:none}.hero .pills .pill{animation:none}}
+
+footer a{text-decoration:none}
