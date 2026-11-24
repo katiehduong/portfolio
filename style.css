@@ -1,6 +1,6 @@
 @font-face{font-family:"P22 Mackinac";src:url(fonts/P22Mackinac-Book.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"P22 Mackinac";src:url(fonts/P22Mackinac-Medium.woff2) format("woff2");font-weight:500;font-display:swap}
-:root{--bg:#FFFBFA;--ink:#535C6F;--muted:#535C6F;--pink:#F4C2C2;--blue:#535C6F;--teal:#89B0AF;--line:#E9E2E2;--coral:#CF6C49;--aqua:#56B3C4;--pad:120px}
+:root{--bg:#FFFBFA;--ink:var(--color-blue-slate);--muted:var(--color-blue-slate);--pink:var(--color-molly-tea-pink);--blue:var(--color-blue-slate);--teal:var(--color-muted-teal);--line:#E9E2E2;--coral:#CF6C49;--aqua:#56B3C4;--pad:120px}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:5rem}
 body{min-height:100vh;color:var(--ink);font:400 1rem/1.6 "Helvetica Neue",Helvetica,Arial,sans-serif;background:radial-gradient(60% 320px at 50% 0,#F4C2C2 0,transparent 75%),radial-gradient(40% 260px at 22% 0,#D9E8E7 0,transparent 75%),var(--bg);background-repeat:no-repeat}

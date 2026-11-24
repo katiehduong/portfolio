@@ -1,0 +1,15 @@
+/*
+ * Design tokens
+ * Source: Figma "Portfolio (Real)" → Design System page
+ * Collection: "Variable collection" (Mode 1)
+ * Keep in sync with Figma; names mirror the Figma variable names.
+ */
+
+:root {
+  /* Color */
+  --color-molly-tea-pink: #F4C2C2;
+  --color-muted-teal: #89B0AF;
+  --color-blue-slate: #535C6F;
+  --color-blueberry: #A8BBE3;
+  --color-coffee-bean: #120309;
+}
