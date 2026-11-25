@@ -39,8 +39,8 @@ document.addEventListener('click',function(e){if(e.target.closest&&e.target.clos
 addEventListener('hashchange',function(){set(false);sync()});sync();
 })();
 
-/* About: "My top five" category toggle */
-(function(){var btns=[].slice.call(document.querySelectorAll('.top5 [aria-controls]'));if(!btns.length)return;
-btns.forEach(function(b){b.addEventListener('click',function(){btns.forEach(function(x){var on=x===b;x.setAttribute('aria-pressed',String(on));var p=document.getElementById(x.getAttribute('aria-controls'));if(p)p.hidden=!on;});});});})();
+/* About: "My top five" category toggle. Sets data-cat on the section; CSS swaps photos/captions and animates frame heights. */
+(function(){var sec=document.querySelector('.top5');if(!sec)return;var btns=[].slice.call(sec.querySelectorAll('.pills [data-cat]'));
+btns.forEach(function(b){b.addEventListener('click',function(){sec.setAttribute('data-cat',b.getAttribute('data-cat'));btns.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});});});})();
 /* Top five: if a photo is missing, keep the gray placeholder box instead of a broken-image icon */
 (function(){[].slice.call(document.querySelectorAll('.top5-list img')).forEach(function(i){function gone(){i.remove()}if(i.complete&&!i.naturalWidth&&i.getAttribute('src'))gone();else i.addEventListener('error',gone);});})();

@@ -133,19 +133,24 @@ footer a{text-decoration:none}
 .gallery figure:nth-child(3) img{object-position:center 80%}
 .top5{margin-top:5rem}
 .top5 .pills{margin-bottom:1.25rem}
-.top5 .pill{font:400 1.25rem "Helvetica Neue",Helvetica,Arial,sans-serif;padding:.5rem .875rem;cursor:pointer;transition:opacity .2s}
+.top5 .pill{font:400 1.25rem "Helvetica Neue",Helvetica,Arial,sans-serif;padding:.5rem .875rem;cursor:pointer;transition:opacity .25s}
 .top5 .pill.pink{background:rgba(244,194,194,.25)}.top5 .pill.teal{background:rgba(137,176,175,.25)}.top5 .pill.blue{background:rgba(83,92,111,.25)}
-.top5 .pill[aria-pressed="false"]{opacity:.5}
-.top5 .pill[aria-pressed="false"]:hover{opacity:.8}
+.top5 .pill[aria-pressed="false"]{opacity:.25}
+.top5 .pill[aria-pressed="false"]:hover{opacity:.5}
+/* One row of 5 frames; each frame's height (Figma px at 224px wide) depends on the active tab and animates between tabs */
 .top5-list{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;align-items:start;list-style:none;padding:0;margin:0}
-.top5-list[hidden]{display:none}
-.top5-list .ph{background:#D9D9D9;border-radius:4px;margin-bottom:.75rem;overflow:hidden}
-.top5-list .ph img{display:block;width:100%;height:100%;object-fit:cover}
-.top5-list li:nth-child(1) .ph{aspect-ratio:224/191}
-.top5-list li:nth-child(2) .ph{aspect-ratio:224/161}
-.top5-list li:nth-child(3) .ph{aspect-ratio:224/219}
-.top5-list li:nth-child(4) .ph,.top5-list li:nth-child(5) .ph{aspect-ratio:224/245}
-.top5-list p{font-size:1.25rem;color:#000}
+.top5-list .ph{position:relative;height:0;padding-top:calc(var(--h,200) / 224 * 100%);background:#D9D9D9;border-radius:4px;overflow:hidden;transition:padding-top .5s cubic-bezier(.4,0,.2,1)}
+.top5-list .ph img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease}
+.top5-list li{display:grid;grid-template-rows:auto auto;row-gap:12px}
+.top5-list li>.ph{grid-row:1}
+.top5-list li>p{grid-row:2;grid-column:1;font-size:.875rem;line-height:1.2;color:#535C6F;opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s .35s}
+.top5[data-cat="drinks"] .top5-list [data-cat="drinks"],
+.top5[data-cat="restaurants"] .top5-list [data-cat="restaurants"],
+.top5[data-cat="sidequests"] .top5-list [data-cat="sidequests"]{opacity:1;visibility:visible;transition-delay:0s}
+.top5[data-cat="drinks"] li:nth-child(1){--h:191}.top5[data-cat="drinks"] li:nth-child(2){--h:254}.top5[data-cat="drinks"] li:nth-child(3){--h:219}.top5[data-cat="drinks"] li:nth-child(4){--h:274}.top5[data-cat="drinks"] li:nth-child(5){--h:192}
+.top5[data-cat="restaurants"] li:nth-child(1){--h:156}.top5[data-cat="restaurants"] li:nth-child(2){--h:137}.top5[data-cat="restaurants"] li:nth-child(3){--h:250}.top5[data-cat="restaurants"] li:nth-child(4){--h:211}.top5[data-cat="restaurants"] li:nth-child(5){--h:192}
+.top5[data-cat="sidequests"] li:nth-child(1){--h:207}.top5[data-cat="sidequests"] li:nth-child(2){--h:248}.top5[data-cat="sidequests"] li:nth-child(3){--h:220}.top5[data-cat="sidequests"] li:nth-child(4){--h:173}.top5[data-cat="sidequests"] li:nth-child(5){--h:263}
+@media(prefers-reduced-motion:reduce){.top5-list .ph,.top5-list .ph img,.top5-list li>p{transition:none}}
 @media(max-width:820px){.top5-list{grid-template-columns:repeat(2,1fr)}.top5 .pill{font-size:1rem}.favs{flex-direction:column}}
 
 
