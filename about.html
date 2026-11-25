@@ -69,33 +69,64 @@
             <figure><img src="images/pixels-4.jpg" alt="A large group of friends gathered in a park" loading="lazy"></figure>
           </div>
         </section>
-        <section class="top5">
+        <section class="top5" data-cat="drinks">
           <h2>My top five (toggle by category):</h2>
           <div class="pills" role="group" aria-label="Category">
-            <button type="button" class="pill pink" aria-pressed="true" aria-controls="top-drinks">Drinks</button>
-            <button type="button" class="pill teal" aria-pressed="false" aria-controls="top-restaurants">Restaurants</button>
-            <button type="button" class="pill blue" aria-pressed="false" aria-controls="top-media">Media</button>
+            <button type="button" class="pill pink" data-cat="drinks" aria-pressed="true" aria-controls="top5-list">Drinks</button>
+            <button type="button" class="pill teal" data-cat="restaurants" aria-pressed="false" aria-controls="top5-list">Restaurants</button>
+            <button type="button" class="pill blue" data-cat="sidequests" aria-pressed="false" aria-controls="top5-list">Sidequests</button>
           </div>
-          <ol class="top5-list" id="top-drinks">
-            <li><div class="ph"><img src="images/top-drinks-1.jpeg" alt="" loading="lazy"></div><p>01. description</p></li>
-            <li><div class="ph"><img src="images/top-drinks-2.jpeg" alt="" loading="lazy"></div><p>02. description</p></li>
-            <li><div class="ph"><img src="images/top-drinks-3.jpeg" alt="" loading="lazy"></div><p>03. description</p></li>
-            <li><div class="ph"><img src="images/top-drinks-4.jpeg" alt="" loading="lazy"></div><p>04. description</p></li>
-            <li><div class="ph"><img src="images/top-drinks-5.jpeg" alt="" loading="lazy"></div><p>05. description</p></li>
-          </ol>
-          <ol class="top5-list" id="top-restaurants" hidden>
-            <li><div class="ph"><img src="images/top-restaurants-1.jpeg" alt="" loading="lazy"></div><p>01. description</p></li>
-            <li><div class="ph"><img src="images/top-restaurants-2.jpeg" alt="" loading="lazy"></div><p>02. description</p></li>
-            <li><div class="ph"><img src="images/top-restaurants-3.jpeg" alt="" loading="lazy"></div><p>03. description</p></li>
-            <li><div class="ph"><img src="images/top-restaurants-4.jpeg" alt="" loading="lazy"></div><p>04. description</p></li>
-            <li><div class="ph"><img src="images/top-restaurants-5.jpeg" alt="" loading="lazy"></div><p>05. description</p></li>
-          </ol>
-          <ol class="top5-list" id="top-media" hidden>
-            <li><div class="ph"><img src="images/sidequest-1.jpeg" alt="" loading="lazy"></div><p>01. description</p></li>
-            <li><div class="ph"><img src="images/sidequest-2.jpeg" alt="" loading="lazy"></div><p>02. description</p></li>
-            <li><div class="ph"><img src="images/sidequest-3.jpeg" alt="" loading="lazy"></div><p>03. description</p></li>
-            <li><div class="ph"><img src="images/sidequest-4.jpg" alt="" loading="lazy"></div><p>04. description</p></li>
-            <li><div class="ph"><img src="images/sidequest-5.jpeg" alt="" loading="lazy"></div><p>05. description</p></li>
+          <ol class="top5-list" id="top5-list">
+            <li>
+              <div class="ph">
+                <img data-cat="drinks" src="images/top-drinks-1.jpeg" alt="" style="object-position:50% 40.5%">
+                <img data-cat="restaurants" src="images/top-restaurants-1.jpeg" alt="" style="object-position:50% 81.2%">
+                <img data-cat="sidequests" src="images/sidequest-1.jpeg" alt="">
+              </div>
+              <p data-cat="drinks">Aroom’s Sesame Latte</p>
+              <p data-cat="restaurants">Ginger &amp; Scallion</p>
+              <p data-cat="sidequests">Pottery painting</p>
+            </li>
+            <li>
+              <div class="ph">
+                <img data-cat="drinks" src="images/top-drinks-2.jpeg" alt="">
+                <img data-cat="restaurants" src="images/top-restaurants-2.jpeg" alt="">
+                <img data-cat="sidequests" src="images/sidequest-2.jpeg" alt="">
+              </div>
+              <p data-cat="drinks">Molly Tea’s Pistachio Jasmine Coconut</p>
+              <p data-cat="restaurants">Tendon Kohaku</p>
+              <p data-cat="sidequests">Using my kitchen more often</p>
+            </li>
+            <li>
+              <div class="ph">
+                <img data-cat="drinks" src="images/top-drinks-3.jpeg" alt="">
+                <img data-cat="restaurants" src="images/top-restaurants-3.jpeg" alt="" style="object-position:50% 38%">
+                <img data-cat="sidequests" src="images/sidequest-3.jpeg" alt="" style="object-position:50% 49.7%">
+              </div>
+              <p data-cat="drinks">Muddy Water’s Pink Lotus with Lychee, White Peach, and Strawberry and Cream Top</p>
+              <p data-cat="restaurants">Kin Len Thai</p>
+              <p data-cat="sidequests">Larping as a florist</p>
+            </li>
+            <li>
+              <div class="ph">
+                <img data-cat="drinks" src="images/top-drinks-4.jpeg" alt="" style="object-position:50% 48.4%">
+                <img data-cat="restaurants" src="images/top-restaurants-4.jpeg" alt="" style="object-position:50% 69.9%">
+                <img data-cat="sidequests" src="images/sidequest-4.JPG" alt="" style="object-position:50% 65.1%">
+              </div>
+              <p data-cat="drinks">Copper Kettle’s Sesame Latte</p>
+              <p data-cat="restaurants">Steakeasy</p>
+              <p data-cat="sidequests">Exploring Washington’s outdoors</p>
+            </li>
+            <li>
+              <div class="ph">
+                <img data-cat="drinks" src="images/top-drinks-5.jpeg" alt="" style="object-position:50% 64.9%">
+                <img data-cat="restaurants" src="images/top-restaurants-5.jpeg" alt="" style="object-position:50% 65.6%">
+                <img data-cat="sidequests" src="images/sidequest-5.jpeg" alt="" style="object-position:50% 23.5%">
+              </div>
+              <p data-cat="drinks">Moment Coffee’s Double Matcha</p>
+              <p data-cat="restaurants">Hiroshi’s Poke</p>
+              <p data-cat="sidequests">Experimenting with physical prototyping</p>
+            </li>
           </ol>
         </section>
       </article>
