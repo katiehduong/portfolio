@@ -38,3 +38,9 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})
 document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('.case>.toc a'))set(false)});
 addEventListener('hashchange',function(){set(false);sync()});sync();
 })();
+
+/* About: "My top five" category toggle */
+(function(){var btns=[].slice.call(document.querySelectorAll('.top5 [aria-controls]'));if(!btns.length)return;
+btns.forEach(function(b){b.addEventListener('click',function(){btns.forEach(function(x){var on=x===b;x.setAttribute('aria-pressed',String(on));var p=document.getElementById(x.getAttribute('aria-controls'));if(p)p.hidden=!on;});});});})();
+/* Top five: if a photo is missing, keep the gray placeholder box instead of a broken-image icon */
+(function(){[].slice.call(document.querySelectorAll('.top5-list img')).forEach(function(i){function gone(){i.remove()}if(i.complete&&!i.naturalWidth&&i.getAttribute('src'))gone();else i.addEventListener('error',gone);});})();
